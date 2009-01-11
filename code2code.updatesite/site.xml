@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description url="http://www.easygeneratorplugin.com/updates/latest">
+   <description url="http://srizzo.github.com/code2code/code2code.updatesite/">
       code2code site
    </description>
+   <feature url="features/code2code_0.0.5.jar" id="code2code" version="0.0.5"/>
 </site>
