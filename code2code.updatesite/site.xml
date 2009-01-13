@@ -3,5 +3,5 @@
    <description url="http://srizzo.github.com/code2code/code2code.updatesite/">
       code2code site
    </description>
-   <feature url="features/code2code_0.0.5.jar" id="code2code" version="0.0.5"/>
+   <feature url="features/code2code_0.0.6.jar" id="code2code" version="0.0.6"/>
 </site>

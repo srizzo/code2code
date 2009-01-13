@@ -1,33 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository class='org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository' version='1.0.0'?>
-<repository name='http://srizzo.github.com/code2code/code2code.updatesite/ - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
+<repository name='http://srizzo.github.com/code2code/code2code.updatesite/ - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1231716269817'/>
+    <property name='p2.timestamp' value='1231888853256'/>
   </properties>
   <mappings size='3'>
     <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
     <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
     <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
   </mappings>
-  <artifacts size='3'>
-    <artifact classifier='osgi.bundle' id='code2code' version='0.0.5'>
+  <artifacts size='2'>
+    <artifact classifier='osgi.bundle' id='code2code' version='0.0.6'>
       <properties size='3'>
-        <property name='artifact.size' value='4237963'/>
-        <property name='download.size' value='4237963'/>
+        <property name='artifact.size' value='4238021'/>
+        <property name='download.size' value='4238021'/>
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='code2code' version='0.0.5'>
+    <artifact classifier='org.eclipse.update.feature' id='code2code' version='0.0.6'>
       <properties size='2'>
-        <property name='artifact.size' value='748'/>
-        <property name='download.size' value='748'/>
-      </properties>
-    </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='code2code' version='0.0.5'>
-      <properties size='2'>
-        <property name='artifact.size' value='733'/>
-        <property name='download.size' value='733'/>
+        <property name='artifact.size' value='1313'/>
+        <property name='download.size' value='1313'/>
       </properties>
     </artifact>
   </artifacts>
