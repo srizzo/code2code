@@ -3,13 +3,18 @@ layout: default
 title: code2code
 ---
 
-# code2code eclipse plugin
+# code2code - eclipse plugin
 	
 ## Let code create code
 
-code2code is a lightweight plugin for Eclipse 3.4 to generate code from templates you create, using popular template engines (currently [Groovy](http://groovy.codehaus.org/Groovy+Templates), [Freemarker](http://freemarker.sourceforge.net/) and [Velocity](http://velocity.apache.org/) are available).
+code2code is a plugin for Eclipse 3.4 to generate code from templates you create using popular template engines (currently [Groovy](http://groovy.codehaus.org/Groovy+Templates), [Freemarker](http://freemarker.sourceforge.net/) and [Velocity](http://velocity.apache.org/) are available). It's inspired on (but not equals to) [Rails generators](http://wiki.rubyonrails.org/rails/pages/UnderstandingGenerators).
 
-## Very simple
+
+## Lightweight, easy to work
+
+code2code adds a "Generate..." option to your project context menu ([see](images/screenshots/generate.png)). When clicked, it will let you choose one of your generators ([see](images/screenshots/generatorSelection.png)), ask you the params you've specified ([see](images/screenshots/paramsConfiguration.png)), and then generate the result to the places you've told it ([see](images/screenshots/generatorCustomization.png)).
+
+## Very simple template creation
 
 1. Create the templates using your favorite engine, with its corresponding extensions (*.groovy*, *.ftl*, and *.vm*).
 1. Create a *"templates"* file telling the destination of each template when generated.
@@ -68,11 +73,6 @@ The source:
 
     name
 
-## Lightweight, easy to work
-
-Generate only code you know: you have total control over the code which will be generated. Also, you don't need to learn yet another language to create your generators: it will let you use your favorite template engine. In this alpha realease the Freemarker, Velocity and Groovy Template engines are supported.
-
-
 ## Open Source
 
 code2code is free, released under the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
@@ -81,5 +81,5 @@ code2code is free, released under the [MIT license](http://en.wikipedia.org/wiki
 
 Current version is: 0.0.5 Alpha. It's already totally functional, but you can expect limited functionality and not a really beautyful design. Also, you can expect major changes in how it works if needed. 
 
-You can install it from our link to [Update Site] (http://srizzo.github.com/code2code/code2code.updatesite)
+You can download/install it from our [Update Site] (http://srizzo.github.com/code2code/code2code.updatesite)
 
