@@ -3,8 +3,83 @@ layout: default
 title: code2code
 ---
 
-This project <a href="http://github.com/srizzo/code2code">code2code</a> is awesome.
+# code2code eclipse plugin
+	
+## Let code create code
 
-To enable Disqus comments + badges for this site, [add it to your Disqus account](http://disqus.com/add/).
+code2code is a lightweight plugin for Eclipse 3.4 to generate code from templates you create, using popular template engines (currently [Groovy](http://groovy.codehaus.org/Groovy+Templates), [Freemarker](http://freemarker.sourceforge.net/) and [Velocity](http://velocity.apache.org/) are available).
 
-Also, you can/should [create a Lighthouse project](http://srizzo.lighthouseapp.com/projects/new) for your project and update "TODO" within the _layouts files with the project id (e.g. "12345-code2code" from the Lighthouse project url).
+## Very simple
+
+1. Create the templates using your favorite engine, with its corresponding extensions (*.groovy*, *.ftl*, and *.vm*).
+1. Create a *"templates"* file telling the destination of each template when generated.
+1. Create a *"params"* file telling the params your templates need.
+1. Put them on a folder with the *".generator"* extension.
+1. Put your generators on a folder called *"generators"* on you project root.
+1. That's all... you can know right click on your project root folder, and access the *"Generate..."* option to generate code using your custom generators.
+
+See a HelloWorld generator example: 
+
+
+<ul class="directory-structure">
+	<li>
+		<img src="images/icons/folder.png" class="file-icon"> generators/
+		<ul>
+			<li>
+				<img src="images/icons/folder.png" class="file-icon"> HelloWorld.generator/
+				<ul>
+					<li>
+						<img src="images/icons/folder.png" class="file-icon"> templates/
+						<ul>
+							<li>
+								<img src="images/icons/file.png" class="file-icon"> HelloWorld.java.ftl
+							</li>
+						</ul>
+					</li>
+					<li>
+						<img src="images/icons/file.png" class="file-icon"> templates.ftl
+					</li>
+					<li>
+						<img src="images/icons/file.png" class="file-icon"> params.ftl
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
+The source: 
+
+<img src="images/icons/file.png" class="file-icon"> HelloWorld.java.ftl:
+
+    public class HelloWorld{
+		public static void main(String[] args) {
+			System.out.println("Hello ${name}");
+		}
+    }
+
+<img src="images/icons/file.png" class="file-icon"> templates.ftl
+
+    templates/HelloWorld.java.ftl=src/HelloWorld.java
+
+
+<img src="images/icons/file.png" class="file-icon"> params.ftl
+
+    name
+
+## Lightweight, easy to work
+
+Generate only code you know: you have total control over the code which will be generated. Also, you don't need to learn yet another language to create your generators: it will let you use your favorite template engine. In this alpha realease the Freemarker, Velocity and Groovy Template engines are supported.
+
+
+## Open Source
+
+code2code is free, released under the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
+
+## Install
+
+Current version is: 0.0.5 Alpha. It's already totally functional, but you can expect limited functionality and not a really beautyful design. Also, you can expect major changes in how it works if needed. 
+
+You can install it from our link to [Update Site] (http://srizzo.github.com/code2code/code2code.updatesite)
+

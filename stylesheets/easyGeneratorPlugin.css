@@ -1,0 +1,177 @@
+body {
+  background-color: #f5f5f5;
+  color: #333333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  padding: 1.6em 0 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+  font-family: "Georgia",sans-serif;
+}
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #5E5AFF;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+#main {
+  margin: 0 auto;
+  padding: 0;
+  width: 45em;
+}
+
+#main-menu li {
+  display: inline;
+}
+
+
+
+#logo {
+  padding: 10px;
+  background-image: url(/images/gradients/custom2.png);
+  background-repeat: repeat-x;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+#logo a {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 1.8em;
+  line-height: 1em;
+  font-weight: normal;
+  color: #EEEEEE;
+  text-decoration: none;
+  display: block;
+}
+
+#logo div {
+  font-size: 0.5em;
+  margin-left:280px;
+}
+
+
+
+#disclaimer {
+  float: right;
+  background-color: #EEF49A;
+  width: 33%;
+  padding: 10px;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+  line-height: 1.3em;
+  border: 1px solid #FFDA78;
+  text-align: justify;
+}
+
+#disclaimer, #disclaimer * {
+  color: #333333;
+  font-family: verdana,helvetica,arial,sans-serif;
+}
+
+
+
+
+
+.file-icon {
+  vertical-align: middle;
+}
+
+.code-example {
+  margin: 20px 0px;
+}
+
+.code-example .file-name {
+  font-family: monospace;
+  font-size: 90%;
+  line-height: 1.4em;
+}
+
+.code-example pre {
+  background-color: #111111;
+  color: #FFFF88;
+  font-family: monospace;
+  font-size: 90%;
+  line-height: 1.4em;
+  padding: 2px 10px;
+  margin: 0px;
+}
+
+.freemarker-expression {
+  color: red;
+}
+
+.freemarker-tag {
+  color: blue;
+}
+
+.property-key {
+}
+.property-value {
+}
+.comment {
+  color: #AAAAAA;
+  font-style: italic;
+}
+.keyword {
+  font-weight:bold;
+}
+
+
+.punct {
+  color: #EEEEEE;
+  font-weight: bold;
+}
+.symbol {
+  color: #00BBBB;
+}
+.string {
+  color: #66BB44;
+}
+.ident {
+  color: #FFFF88;
+}
+.constant {
+  color: #6666FF;
+}
+.regex {
+  color: #EECC66;
+}
+.number {
+  color: #FF9999;
+}
+.expr {
+  color: #222277;
+}
+
+
+
+
+
+/*Nested Ordered Lists*/
+#toc{counter-reset:section;}
+ul.sections{counter-reset:sections;}
+ul.sections>li{counter-increment:sections;}
+ul.sections2{counter-reset:sections2;}
+ul.sections2>li{counter-increment:sections2;}
+ul.sections3{counter-reset:sections3;}
+ul.sections3>li{counter-increment:sections3;}
+ul.sections>li:before{content:counter(sections) ". ";}
+ul.sections2>li:before{content:counter(sections) "." counter(sections2) ". ";}
+ul.sections3>li:before{content:counter(sections) "." counter(sections2) "." counter(sections3) ". ";}
+#guide-content{counter-reset:sections sections2 sections3;}
+#guide-content h2{counter-increment:sections;}
+#guide-content h3{counter-increment:sections2;}
+#guide-content h4{counter-increment:sections3;}
+#guide-content h2:before{content:counter(sections) ". ";}
+#guide-content h3:before{content:counter(sections) "." counter(sections2) ". ";}
+#guide-content h4:before{content:counter(sections) "." counter(sections2) "." counter(sections3) ". ";}
+
