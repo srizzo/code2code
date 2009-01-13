@@ -51,7 +51,7 @@ See a HelloWorld generator example:
 
 The source: 
 
-<img src="images/icons/file.png" class="file-icon"> HelloWorld.java.ftl
+<div><img src="images/icons/file.png" class="file-icon"> HelloWorld.java.ftl</div>
 
     public class HelloWorld{
 		public static void main(String[] args) {
@@ -59,12 +59,12 @@ The source:
 		}
     }
 
-<img src="images/icons/file.png" class="file-icon"> templates.ftl
+<div><img src="images/icons/file.png" class="file-icon"> templates.ftl</div>
 
     templates/HelloWorld.java.ftl=src/HelloWorld.java
 
 
-<img src="images/icons/file.png" class="file-icon"> params.ftl
+<div><img src="images/icons/file.png" class="file-icon"> params.ftl</div>
 
     name
 
