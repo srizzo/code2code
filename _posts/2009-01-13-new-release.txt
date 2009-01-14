@@ -1,0 +1,6 @@
+---
+layout: post
+title: 0.0.6 released
+---
+
+code2code 0.0.6 released. Put examples on github. Still working...
