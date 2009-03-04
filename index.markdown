@@ -79,7 +79,7 @@ code2code is free, released under the [MIT license](http://en.wikipedia.org/wiki
 
 ## Install
 
-Current version is: 0.0.6 Alpha. It's already totally functional, but you can expect limited functionality and not a really beautyful layout. Also, you can expect major changes in how it works if needed. 
+Current version is: 0.0.6 Alpha. It's already totally functional, but you can expect limited functionality and not a really beautiful layout. Also, you can expect major changes in how it works if needed. 
 
 You can download/install it from our [Update Site](http://srizzo.github.com/code2code/code2code.updatesite)
 
