@@ -1,0 +1,42 @@
+--using the generator
+
+--	set params for generation
+--		set params
+--		use processed params
+--	set generated files destinations
+--		change destination
+--	uncheck for generation
+--	preview output
+--		change preview
+--	use global params
+--	log generation to console
+
+	
+--creating generators
+
+--	description
+--		set
+--		use engine
+--	templates
+--		set destination
+--		use processed destination
+--	generate to console
+--	parameterize generators
+--		set
+--		set default
+--	use params
+--		referencing
+--	use engines
+--		engine on params
+--		engine on templates config
+--		engine on template
+--  choose engine by file extension
+--		use freemarker
+--		use velocity
+--		use groovy
+--		use none - binary .txt and .properites
+--	nested generators
+	
+
+
+	

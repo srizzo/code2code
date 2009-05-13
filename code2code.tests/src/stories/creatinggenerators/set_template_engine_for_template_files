@@ -1,0 +1,20 @@
+Story: Set template engine for template files
+
+	As a Developer
+	I want to use template engine on template files
+	So that I have dynamic generated content
+
+
+Scenario: Set Freemarker as template engine for template files
+
+	Given I have a new project
+	When I create the generator folder "generators/Using Freemarker on templates.generator"
+	And I create the template file "generators/Using Freemarker on templates.generator/templates/UsingFreemarkerOnTemplates.txt.ftl" with contents:
+	  	<#assign engine="Freemarker"/>Using ${engine} on templates
+	And I create the templates configuration file "generators/Using Freemarker on templates.generator/templates.ftl" with contents:
+	  	templates/UsingFreemarkerOnTemplates.txt.ftl=Using Freemarker on templates.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Using Freemarker on templates" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Using Freemarker on templates.txt" generated with content:
+	  	Using Freemarker on templates

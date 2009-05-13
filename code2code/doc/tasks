@@ -1,0 +1,45 @@
+full documentation on github first page
+
+show which engine is been used
+
+default injected params (selection.path, project.path, project.name ...) in context[] hash
+
+
+allow undo
+
+show status monitor on generation
+
+
+show New Wizard option only on relevant projects
+
+put context menu items on top
+
+
+
+
+
+make eclipse console file links on log
+
+
+
+
+extract initial params when creating generator from files
+
+lazily process templates
+
+
+allow overwrite existing files
+
+
+
+merge/compare existing files
+
+syntax highlight on preview
+
+
+search for generators on the user's home folder
+global user params in a properties file
+
+allow user to change template at generation
+
+allow generation of projects

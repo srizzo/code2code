@@ -1,0 +1,26 @@
+Story: Generate templates to console
+
+	As a Developer
+	I want to generate code snippets to console
+	So that I can copy and paste them to the right files
+
+
+Scenario: Generate to console
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator using console.generator"
+	And I create the template file "generators/Generator using console.generator/templates/TemplateWithSnippet.txt" with contents:
+		Some code Snippet to be Copy and Pasted
+	And I create the templates configuration file "generators/Generator using console.generator/templates.txt" with contents:
+		templates/TemplateWithSnippet.txt=
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator using console" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the "Console" printed with the content:
+	
+Processing generator: Generator using console
+Generating templates/TemplateWithSnippet.txt to console:
+-------------------------------------------------------------
+Some code Snippet to be Copy and Pasted
+-------------------------------------------------------------
+Done

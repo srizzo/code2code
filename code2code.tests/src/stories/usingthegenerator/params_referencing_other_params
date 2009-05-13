@@ -1,0 +1,25 @@
+Story: Params referencing other params
+
+	As a Developer
+	I want to have each param value processed by declaration order
+	So that I can reference and process previous params values
+
+
+
+Scenario: Params referencing other params
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator with Params.generator"
+	And I create the template file "generators/Generator with Params.generator/templates/GeneratedFile.txt.ftl" with contents:
+	  	${processedParam}
+	And I create the templates configuration file "generators/Generator with Params.generator/templates.ftl" with contents:
+	  	templates/GeneratedFile.txt.ftl=Generated File.txt
+	And I create the params configuration file "generators/Generator with Params.generator/params.ftl" with contents:
+	  	referencedParam=referenced param
+	  	processedParam=${referencedParam?capitalize}
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator with Params" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Generated File.txt" generated with content:
+	  	Referenced Param
+

@@ -1,0 +1,50 @@
+Story: Set params for generation
+
+	As a Developer
+	I want to change the generator params
+	So that it generates the dynamic content I need
+
+
+
+Scenario: Set params for generation
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator with param.generator"
+	And I create the template file "generators/Generator with param.generator/templates/Generatorwithparam.txt.ftl" with contents:
+	  	${parameter1}
+	  	${parameter2}
+	And I create the templates configuration file "generators/Generator with param.generator/templates.ftl" with contents:
+	  	templates/Generatorwithparam.txt.ftl=Generator with param.txt
+	And I create the params configuration file "generators/Generator with param.generator/params.ftl" with contents:
+	  	parameter1
+	  	parameter2
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator with param" generator and click "Next"
+	And I set the param "parameter1" value to "Parameter 1"
+	And I set the param "parameter2" value to "Parameter 2"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Generator with param.txt" generated with content:
+	  	Parameter 1
+	  	Parameter 2
+
+
+Scenario: Set a processed param for generation
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator with param.generator"
+	And I create the template file "generators/Generator with param.generator/templates/Generatorwithparam.txt.ftl" with contents:
+	  	${parameter1}
+	  	${parameter2}
+	And I create the templates configuration file "generators/Generator with param.generator/templates.ftl" with contents:
+	  	templates/Generatorwithparam.txt.ftl=Generator with param.txt
+	And I create the params configuration file "generators/Generator with param.generator/params.ftl" with contents:
+	  	parameter1
+	  	parameter2
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator with param" generator and click "Next"
+	And I set the param "parameter1" value to "Parameter 1"
+	And I set the param "parameter2" value to "${parameter1?upper_case}"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Generator with param.txt" generated with content:
+	  	Parameter 1
+	  	PARAMETER 1

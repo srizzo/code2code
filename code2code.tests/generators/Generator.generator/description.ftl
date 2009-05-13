@@ -1,0 +1,1 @@
+Cria um novo Gerador na pasta .generator

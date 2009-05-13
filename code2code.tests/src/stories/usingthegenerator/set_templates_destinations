@@ -1,0 +1,21 @@
+Story: Set templates destinations
+
+	As a Developer
+	I want to be able to change the destination of the templates
+	So that I can choose the right place to it
+
+
+
+Scenario: Set a template destination
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator with unwanted destination.generator"
+	And I create the template file "generators/Generator with unwanted destination.generator/templates/TemplateWithUnwantedDestination.txt.ftl"
+	And I create the templates configuration file "generators/Generator with unwanted destination.generator/templates.ftl" with contents:
+	  	templates/TemplateWithUnwantedDestination.txt.ftl=UnwantedFolder/Template with unwanted destination.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator with unwanted destination" generator and click "Next"
+	And I click "Next" on the "Configure Params" dialog
+	And I change the template "templates/TemplateWithUnwantedDestination.txt.ftl" destination to "Template with unwanted destination.txt" on the "Customize Generation" dialog
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Template with unwanted destination.txt" generated

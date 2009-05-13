@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="code2code.category"
+            name="code2code">
+      </category>
+      <wizard
+            category="code2code.category"
+            class="code2code.ui.wizards.generate.GenerateFilesWizard"
+            id="code2code.newWizard"
+            name="File(s) from Template">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <newWizardShortcut
+               id="code2code.newWizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="code2code.projectObjectContribution"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="code2code.popupmenu.GenerateAction"
+               enablesFor="1"
+               id="code2code.generateAction"
+               label="Generate..."
+               menubarPath="code2code">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="code2code.multipleFilesObjectContribution"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="code2code.popupmenu.CreateGeneratorAction"
+               enablesFor="*"
+               id="code2code.createGeneratorAction"
+               label="Create generator from selected files..."
+               menubarPath="code2code">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

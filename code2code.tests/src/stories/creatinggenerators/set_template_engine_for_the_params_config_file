@@ -1,0 +1,25 @@
+Story: Set template engine for the params config file
+
+	As a Developer
+	I want to use template engines on the params config files
+	So that I have processed params
+
+
+
+Scenario: Set Freemarker as the template engine for the params config file
+
+	Given I have a new project
+	When I create the generator folder "generators/Using Freemarker on the params config file.generator"
+	And I create the template file "generators/Using Freemarker on the params config file.generator/templates/UsingFreemarkerOnParamsConfigFile.txt.ftl" with contents:
+		${parameter1}
+	And I create the templates configuration file "generators/Using Freemarker on the params config file.generator/templates.ftl" with contents:
+	  	templates/UsingFreemarkerOnParamsConfigFile.txt.ftl=Using Freemarker on the params config file.txt
+	And I create the params configuration file "generators/Using Freemarker on the params config file.generator/params.ftl" with contents:
+	  	parameter1=${"param processed by freemarker"?capitalize}
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Using Freemarker on the params config file" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Using Freemarker on the params config file.txt" generated with content:
+		Param Processed By Freemarker
+
+

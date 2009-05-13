@@ -1,0 +1,25 @@
+Story: Choose files that will be generated
+
+	As a Developer
+	I want to choose the files that will be generated
+	So that I can avoid generation of the ones I don't need
+
+
+
+Scenario: Choose files that will be generated
+
+	Given I have a new project
+	When I create the generator folder "generators/Multiple Files Generator.generator"
+	And I create the template file "generators/Multiple Files Generator.generator/templates/File1.txt"
+	And I create the template file "generators/Multiple Files Generator.generator/templates/File2.txt"
+	And I create the templates configuration file "generators/Multiple Files Generator.generator/templates.txt" with contents:
+	  	templates/File1.txt=File1.txt
+	  	templates/File2.txt=File2.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Multiple Files Generator" generator and click "Next"
+	And I click "Next" on the "Configure Params" dialog
+	And I uncheck the file "templates/File2.txt" on the "Customize Generation" dialog
+	And I finish the "Generate Files" wizard
+	Then I will see the file "File1.txt" generated
+	And I will see not the file "File2.txt" generated
+

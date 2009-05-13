@@ -1,0 +1,21 @@
+Story: Set templates to be generated
+
+	As a Developer
+	I want to set the templates to be generated
+	So that the plugin processes and generates them on the right place 
+
+
+
+Scenario: Set templates to be generated
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator with templates.generator"
+	And I create the template file "generators/Generator with templates.generator/templates/Templatetobegenerated.txt.ftl"
+	And I create the templates configuration file "generators/Generator with templates.generator/templates.ftl" with contents:
+	  	templates/Templatetobegenerated.txt.ftl=Destination.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator with templates" generator and click "Next"
+	And I click "Next" on the "Configure Params" dialog
+	Then I will see the "Customize Generation" dialog
+	And I will see the template "templates/Templatetobegenerated.txt.ftl" listed
+	And I will see the template "templates/Templatetobegenerated.txt.ftl" destination set to "Destination.txt"

@@ -1,0 +1,47 @@
+Story: Preview the output
+
+	As a Developer
+	I want to preview the output of generators
+	So that I know what will be generated
+
+
+
+Scenario: Preview the processed output
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator for previewing.generator"
+	And I create the template file "generators/Generator for previewing.generator/templates/TemplateForPreviewing.txt.ftl" with contents:
+	  	${param1} Content of the template
+	And I create the templates configuration file "generators/Generator for previewing.generator/templates.ftl" with contents:
+	  	templates/TemplateForPreviewing.txt.ftl=Template for previewing.txt
+	And I create the params configuration file "generators/Generator for previewing.generator/params.ftl" with contents:
+	  	param1
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator for previewing" generator and click "Next"
+	And I set the param "param1" value to "Processed"
+	And I click "Next" on the "Configure Params" dialog
+	And I click "Preview" on the template "templates/TemplateForPreviewing.txt.ftl"
+	Then I will see the "Preview" dialog with content:
+	  	Processed Content of the template
+	  	
+	  	
+
+Scenario: Preview and change the output
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator for change on preview.generator"
+	And I create the template file "generators/Generator for change on preview.generator/templates/TemplateForChangeOnPreview.txt.ftl" with contents:
+	  	Original Content of the template
+	And I create the templates configuration file "generators/Generator for change on preview.generator/templates.ftl" with contents:
+	  	templates/TemplateForChangeOnPreview.txt.ftl=Template for change on preview.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator for change on preview" generator and click "Next"
+	And I click "Next" on the "Configure Params" dialog
+	And I click "Preview" on the template "templates/TemplateForChangeOnPreview.txt.ftl"
+	And I change the output content on the "Preview" dialog to:
+	  	Changed Content of the template
+	And I click "OK" on the "Preview" dialog
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Template for change on preview.txt" generated with content:
+	  	Changed Content of the template
+	  	

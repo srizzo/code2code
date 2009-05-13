@@ -1,0 +1,22 @@
+Story: Generate Files
+
+	As a Developer
+	I want to generate files
+	So that I speed up development
+
+
+
+Scenario: Generate Files
+
+	Given I have a new project
+	When I create the generator folder "generators/File Generator.generator"
+	And I create the template file "generators/File Generator.generator/templates/GeneratedFile.txt.txt" with contents:
+	  	File content
+	And I create the templates configuration file "generators/File Generator.generator/templates.txt" with contents:
+	  	templates/GeneratedFile.txt.txt=Generated File.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "File Generator" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Generated File.txt" generated with content:
+	  	File content
+

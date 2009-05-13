@@ -1,0 +1,42 @@
+Story: Create composite generators
+
+	As a Developer
+	I want to compose generators
+	So that I can use them together or separately
+
+
+
+Scenario: Create composite generators
+
+	Given I have a new project
+	
+	When I create the generator folder "generators/Composite Generator.generator"
+	And I create the templates configuration file "generators/Composite Generator.generator/templates.ftl" with contents:
+	  	NestedGenerator.generator
+	And I create the params configuration file "generators/Composite Generator.generator/params.txt" with contents:
+		commonParam=Composite value
+		compositeParam
+	And I create the generator folder "generators/Composite Generator.generator/NestedGenerator.generator"
+	And I create the template file "generators/Composite Generator.generator/NestedGenerator.generator/templates/Nestedgenerator.ftl" with contents:
+	  	${commonParam}
+	And I create the templates configuration file "generators/Composite Generator.generator/NestedGenerator.generator/templates.ftl" with contents:
+	  	templates/Nestedgenerator.ftl=NestedGenerator.txt
+	And I create the params configuration file "generators/Composite Generator.generator/NestedGenerator.generator/params.txt" with contents:
+		commonParam=Nested value
+		nestedParam	
+	And I right click the project on the Package Explorer and select "Generate..."
+	Then I will see the "Composite Generator" generator listed on the "Select a Generator" dialog
+	And I will see the "Composite Generator.generator/NestedGenerator" generator listed on the "Select a Generator" dialog
+	
+	When I select the "Composite Generator" generator and click "Next"
+	Then I will see the "Configure Params" dialog
+	And I will see the "commonParam" parameter to fill
+	And I will see the "commonParam" value already filled with "Composite value"
+	And I will see the "compositeParam" parameter to fill
+	And I will see the "nestedParam" parameter to fill
+	
+	When I finish the "Generate Files" wizard
+	Then I will see the file "NestedGenerator.txt" generated with content:
+	  	Composite value
+
+	

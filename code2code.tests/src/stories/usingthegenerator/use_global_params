@@ -1,0 +1,25 @@
+Story: Use global params
+
+	As a Developer
+	I want to use global default params
+	So that I don't need to specify them in each generator
+
+
+Scenario: Use global params
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator using global params.generator"
+	And I create the template file "generators/Generator using global params.generator/templates/GeneratorUsingGlobalParams.txt.ftl" with contents:
+	  	${param1}
+	And I create the templates configuration file "generators/Generator using global params.generator/templates.ftl" with contents:
+	  	templates/GeneratorUsingGlobalParams.txt.ftl=Generator using global params.txt
+	And I create the params configuration file "generators/Generator using global params.generator/params.ftl" with contents:
+	  	param1=${param1!"Generator Param"}
+	And I create the global params configuration file "generators/params.ftl" with contents:
+	  	param1=Global Param
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator using global params" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Generator using global params.txt" generated with content:
+	  	Global Param
+

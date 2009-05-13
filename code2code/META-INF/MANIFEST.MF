@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: code2code Plug-in
+Bundle-SymbolicName: code2code;singleton:=true
+Bundle-Version: 0.0.6
+Bundle-Vendor: Samuel Rizzo
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.resources;bundle-version="3.4.0",
+ org.eclipse.core.runtime;bundle-version="3.4.0",
+ org.eclipse.ui.ide;bundle-version="3.4.0",
+ org.eclipse.compare;bundle-version="3.4.0",
+ org.eclipse.jface.text;bundle-version="3.4.0",
+ org.eclipse.ui.console;bundle-version="3.3.0",
+ org.eclipse.core.filesystem;bundle-version="1.2.0"
+Bundle-ClassPath: lib/freemarker.jar,
+ .,
+ lib/velocity-1.6-dep.jar,
+ lib/groovy-all-1.5.7.jar
+Export-Package: 
+ code2code.ui.compare,
+ code2code.utils

@@ -1,0 +1,36 @@
+
+Story: Set params for generators
+
+	As a I Developer
+	I want to parameterize my generators
+	So that I can generate dynamic content
+
+
+Scenario: Set params for a generator
+
+	Given I have a new project
+	When I create the generator folder "generators/Parameterized.generator"
+	And I create the templates configuration file "generators/Parameterized.generator/templates.txt"
+	And I create the params configuration file "generators/Parameterized.generator/params.txt" with contents:
+		someParam
+	And I open the "Generate Files" wizard
+	And I select the "Parameterized" generator and click "Next"
+	Then I will see the "Configure Params" dialog
+	And I will see the "someParam" parameter to fill
+
+Scenario: Set default values to params
+
+	Given I have a new project
+	When I create the generator folder "generators/ParameterizedWithDefaultValue.generator"
+	And I create the templates configuration file "generators/ParameterizedWithDefaultValue.generator/templates.txt"
+	And I create the params configuration file "generators/ParameterizedWithDefaultValue.generator/params.txt" with contents:
+		someParam=someDefaultValue
+	And I open the "Generate Files" wizard
+	And I select the "ParameterizedWithDefaultValue" generator and click "Next"
+	Then I will see the "Configure Params" dialog
+	And I will see the "someParam" parameter to fill
+	And I will see the "someParam" value already filled with "someDefaultValue"
+	
+	
+	
+	

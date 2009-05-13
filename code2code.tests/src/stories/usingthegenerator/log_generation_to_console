@@ -1,0 +1,26 @@
+Story: Log generation to console
+
+	As a Developer
+	I want to see the generation log on console
+	So that I know what's happening
+
+
+
+Scenario: Log generated files to console
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator for log.generator"
+	And I create the template file "generators/Generator for log.generator/templates/File1.txt.txt"
+	And I create the template file "generators/Generator for log.generator/templates/File2.txt.txt"
+	And I create the templates configuration file "generators/Generator for log.generator/templates.txt" with contents:
+	  	templates/File1.txt.txt=File 1.txt
+	  	templates/File2.txt.txt=File 2.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator for log" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the "Console" printed with the content:
+	
+Processing generator: Generator for log
+Generating: templates/File1.txt.txt to File 1.txt
+Generating: templates/File2.txt.txt to File 2.txt
+Done

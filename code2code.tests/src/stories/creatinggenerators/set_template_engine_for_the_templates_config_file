@@ -1,0 +1,20 @@
+Story: Set template engine for the templates config file
+
+	As a Developer
+	I want to use template engines on templates config files
+	So that I have processed template destinations
+
+
+Scenario: Set Freemarker as template engine for the templates config file
+
+	Given I have a new project
+	When I create the generator folder "generators/Using Freemarker on the templates config file.generator"
+	And I create the template file "generators/Using Freemarker on the templates config file.generator/templates/UsingFreemarkerOnThemplatesConfigFile.txt.ftl"
+	And I create the templates configuration file "generators/Using Freemarker on the templates config file.generator/templates.ftl" with contents:
+	  	templates/UsingFreemarkerOnThemplatesConfigFile.txt.ftl=<#assign processedDestination="Using Freemarker on the templates config file.txt"/>${processedDestination}
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Using Freemarker on the templates config file" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Using Freemarker on the templates config file.txt" generated
+
+

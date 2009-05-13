@@ -1,0 +1,21 @@
+Story: Set description to generators
+
+	As a Generator Developer
+	I want to set description to generators
+	So that others developers knows its purposes
+
+
+Scenario: Set a description to a generator
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator with description.generator"
+	And I create the template file "generators/Generator with description.generator/templates/Generatorwithdescription.txt.ftl"
+	And I create the description file "generators/Generator with description.generator/description.txt" with contents:
+	    A generator with a description
+	And I create the templates configuration file "generators/Generator with description.generator/templates.ftl" with contents:
+	  	templates/Generatorwithdescription.txt.ftl=Generator with description.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator with description" generator and click "Next"
+	Then I will see the "Configure Params" dialog with the description:
+	    A generator with a description
+

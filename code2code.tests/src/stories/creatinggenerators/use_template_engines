@@ -1,0 +1,74 @@
+Story: Use template engines
+
+	As a Developer
+	I want to use template engines I know
+	So that I have them processed 
+
+
+
+Scenario: Use Freemarker on .ftl files
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator using Freemarker.generator"
+	And I create the template file "generators/Generator using Freemarker.generator/templates/FreemarkerTemplate.txt.ftl" with contents:
+	  	${"processed"?capitalize} by ${engine}
+	And I create the templates configuration file "generators/Generator using Freemarker.generator/templates.ftl" with contents:
+	  	templates/FreemarkerTemplate.txt.ftl=${engine} template.txt
+	And I create the params configuration file "generators/Generator using Freemarker.generator/params.ftl" with contents:
+		engine=${"freemarker"?capitalize}
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator using Freemarker" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Freemarker template.txt" generated with content:
+	  	Processed by Freemarker
+
+Scenario: Use Velocity on .vm files
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator using Velocity.generator"
+	And I create the template file "generators/Generator using Velocity.generator/templates/VelocityTemplate.txt.vm" with contents:
+	  	Processed by $engine.toLowerCase()
+	And I create the templates configuration file "generators/Generator using Velocity.generator/templates.vm" with contents:
+	  	templates/VelocityTemplate.txt.vm=$engine.toLowerCase() template.txt
+	And I create the params configuration file "generators/Generator using Velocity.generator/params.vm" with contents:
+		engine=#set($text='Velocity')$text.toUpperCase()
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator using Velocity" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "velocity template.txt" generated with content:
+	  	Processed by velocity
+
+
+Scenario: Use Groovy on .groovy files
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator using Groovy.generator"
+	And I create the template file "generators/Generator using Groovy.generator/templates/GroovyTemplate.txt.groovy" with contents:
+	  	Processed by <%=engine.toLowerCase()%>
+	And I create the templates configuration file "generators/Generator using Groovy.generator/templates.groovy" with contents:
+	  	templates/GroovyTemplate.txt.groovy=<%=engine.toLowerCase()%> template.txt
+	And I create the params configuration file "generators/Generator using Groovy.generator/params.groovy" with contents:
+		engine=<%="Groovy".toUpperCase()%>
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator using Groovy" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "groovy template.txt" generated with content:
+	  	Processed by groovy
+
+
+Scenario: Use no engine on .txt files
+
+	Given I have a new project
+	When I create the generator folder "generators/Generator using no Template.generator"
+	And I create the template file "generators/Generator using no Template.generator/templates/unprocessed.txt" with contents:
+	  	Processed by <%=engine.toLowerCase()%>
+	And I create the templates configuration file "generators/Generator using no Template.generator/templates.txt" with contents:
+	  	templates/unprocessed.txt=unprocessed.txt
+	And I create the params configuration file "generators/Generator using no Template.generator/params.txt" with contents:
+		engine=<%="no Template".toUpperCase()%>
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Generator using no Template" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "unprocessed.txt" generated with content:
+	  	Processed by <%=engine.toLowerCase()%>
+

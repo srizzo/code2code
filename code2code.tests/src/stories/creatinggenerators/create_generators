@@ -1,0 +1,30 @@
+Story: Create Generators
+
+	As a Developer
+	I want to create my own generators
+	So that I can customize them to my needs
+
+
+Scenario: Create a minimal do-nothing generator
+
+	Given I have a new project
+	When I create the generator folder "generators/Minimal Generator.generator"
+	And I create the templates configuration file "generators/Minimal Generator.generator/templates.txt"
+	And I right click the project on the Package Explorer and select "Generate..."
+	Then I will see the "Minimal Generator" generator listed on the "Select a Generator" dialog
+
+	
+Scenario: Create a generator which just generates a file on the specified location
+
+	Given I have a new project
+	When I create the generator folder "generators/Plain File.generator"
+	And I create the template file "generators/Plain File.generator/templates/PlainFile.txt" with contents:
+	  	Plain Text File!!!
+	And I create the templates configuration file "generators/Plain File.generator/templates.txt" with contents:
+	  	templates/PlainFile.txt=Plain File.txt
+	And I right click the project on the Package Explorer and select "Generate..."
+	And I select the "Plain File" generator and click "Next"
+	And I finish the "Generate Files" wizard
+	Then I will see the file "Plain File.txt" generated with content:
+	  	Plain Text File!!!
+	
