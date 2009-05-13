@@ -7,9 +7,9 @@ code2code is an eclipse plugin to generate code from templates. It allows Rails 
 
 Generator structure:
 
-    generators/
-    |-- GerenatorName.generator/
-        |-- templates/
+    generators
+    |-- GerenatorName.generator
+        |-- templates
             |-- SomeTeplate.txt.ftl
             ...
         |-- templates.ftl
