@@ -1,24 +1,25 @@
 
 # What is it
 
-code2code is an eclipse plugin to allow Rails generators like functionality on java (or other) projects. Its main goal is to allow anyone to create very easily custom generators.
+code2code is an eclipse plugin to generate code from templates. It allows Rails generators like functionality on java (or whatever) projects. Its main goal is easy generator creation by using known template engines, such as Freemarker, Velocity and Groovy Template Engine and very few configuration.
 
-# A Generator Example
+# A Minimal Generator Example
 
-Structure:
+Generator structure:
 
     generators/
-      GerenatorName.generator/
-        templates/
-          SomeTeplate.txt.ftl
-          ...
-        templates.ftl
-        params.ftl
+    |-- GerenatorName.generator/
+        |-- templates/
+            |-- SomeTeplate.txt.ftl
+            ...
+        |-- templates.ftl
+        |-- params.ftl
 
 
 SomeTemplate.txt.ftl:
 
     Hello ${name}!!!
+    ...
 
 
 templates.ftl:
@@ -38,14 +39,14 @@ code2code adds a “Generate…” option to your project context menu. When cli
 
 # Template engines
 
-code2code will process each file through a template engine, indicated by its extension (.groovy = Groovy, .ftl = Freemarker and .vm = Velocity)
+code2code will process each file through a template engine, indicated by its extension (.groovy => Groovy, .ftl => Freemarker and .vm => Velocity)
 
 
 # Installation
 
-Current version is: 0.0.6 Alpha. It's already totally functional, but you can expect limited functionality and not a really beautiful layout. Also, you can expect major changes in how it works if needed. 
+Current version is 0.0.6, tested against Eclipse Ganymede 3.4.2.
 
-You can download/install it from the [Update Site](http://srizzo.github.com/code2code/code2code.updatesite)
+You can install it from the [Update Site](http://srizzo.github.com/code2code/code2code.updatesite)
 
 
 
