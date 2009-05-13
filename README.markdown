@@ -41,5 +41,11 @@ code2code adds a “Generate…” option to your project context menu. When cli
 code2code will process each file through a template engine, indicated by its extension (.groovy = Groovy, .ftl = Freemarker and .vm = Velocity)
 
 
+# Installation
+
+Current version is: 0.0.6 Alpha. It's already totally functional, but you can expect limited functionality and not a really beautiful layout. Also, you can expect major changes in how it works if needed. 
+
+You can download/install it from the [Update Site](http://srizzo.github.com/code2code/code2code.updatesite)
+
 
 
