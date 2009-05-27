@@ -3,7 +3,7 @@
 
 code2code is an eclipse plugin to generate code from templates. It allows Rails generators like functionality on java (or whatever) projects. Its main goal is easy generator creation by using known template engines, such as Freemarker, Velocity and Groovy Template Engine and very few configuration.
 
-# A Minimal Generator Example
+# A Generator Example
 
 Generator structure:
 
