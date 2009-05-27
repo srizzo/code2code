@@ -23,7 +23,7 @@ public class PreviewDialog extends TrayDialog {
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
 		
-		EclipseGuiUtils.scaleShellToClientArea(newShell, 0.8);
+		EclipseGuiUtils.scaleShellToClientArea(newShell, 0.7);
 	}
 	
 	public PreviewDialog(Shell shell, Template result) {
