@@ -2,7 +2,7 @@
 <feature
       id="code2code"
       label="code2code Feature"
-      version="0.0.6"
+      version="0.90.0"
       provider-name="Samuel Rizzo">
 
    <description url="http://www.example.com/description">
@@ -42,7 +42,7 @@ OTHER DEALINGS IN THE SOFTWARE.
          id="code2code"
          download-size="0"
          install-size="0"
-         version="0.0.6"
+         version="0.90.0"
          unpack="false"/>
 
 </feature>
