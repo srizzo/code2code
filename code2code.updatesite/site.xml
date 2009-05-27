@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description url="http://srizzo.github.com/code2code/code2code.updatesite">
-      code2code update site
-   </description>
-   <feature url="features/code2code_0.90.0.jar" id="code2code" version="0.90.0">
+   <feature url="features/code2code_0.9.0.jar" id="code2code" version="0.9.0">
       <category name="code2code"/>
    </feature>
    <category-def name="code2code" label="code2code"/>
