@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/code2code_0.9.0.jar" id="code2code" version="0.9.0">
+   <feature url="features/code2code_0.9.1.jar" id="code2code" version="0.9.1">
       <category name="code2code"/>
    </feature>
    <category-def name="code2code" label="code2code"/>
