@@ -44,7 +44,7 @@ code2code will process each file through a template engine, indicated by its ext
 
 # Installation
 
-Current version is 0.9.0, tested against Eclipse Ganymede 3.4.2.
+Current version is 0.9.1, tested against Eclipse Ganymede 3.4.2.
 
 You can install it from the [Update Site](http://srizzo.github.com/code2code/code2code.updatesite)
 
