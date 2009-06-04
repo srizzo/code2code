@@ -30,6 +30,16 @@ public class GeneratorFromFilesWizard extends Wizard implements INewWizard {
 		String generatorName = generatorConfigurationPage.getGeneratorName();
 		
 		String selectedExtension = importedFilesConfigurationPage.getSelectedExtension();
+		String mainEngineExtension = null;
+		
+		if(selectedExtension.equals("bin")){
+			mainEngineExtension = "txt";
+		}else{
+			mainEngineExtension = selectedExtension;
+		}
+		
+		
+		
 		
 		
 		try {
@@ -37,11 +47,11 @@ public class GeneratorFromFilesWizard extends Wizard implements INewWizard {
 			IFolder generatorsFolder = project.getFolder("generators");
 			IFolder generatorFolder = generatorsFolder.getFolder(generatorName + ".generator");
 
-			IFile paramsFile = generatorFolder.getFile("params." + selectedExtension);
+			IFile paramsFile = generatorFolder.getFile("params." + mainEngineExtension);
 			InputStream paramsFileContents = new ByteArrayInputStream("".getBytes());
 
 			
-			IFile descriptionFile = generatorFolder.getFile("description." + selectedExtension);
+			IFile descriptionFile = generatorFolder.getFile("description." + mainEngineExtension);
 			InputStream descriptionFileContents = new ByteArrayInputStream("".getBytes());
 			
 			final StringBuilder templates = new StringBuilder();
@@ -67,7 +77,7 @@ public class GeneratorFromFilesWizard extends Wizard implements INewWizard {
 			}
 			
 			
-			IFile templatesFile = generatorFolder.getFile("templates." + selectedExtension);
+			IFile templatesFile = generatorFolder.getFile("templates." + mainEngineExtension);
 			
 			InputStream templatesFileContents = new ByteArrayInputStream(templates.toString().getBytes());
 			templatesFile.create(templatesFileContents , false, null);
