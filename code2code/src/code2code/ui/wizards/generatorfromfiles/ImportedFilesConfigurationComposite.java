@@ -71,7 +71,7 @@ public class ImportedFilesConfigurationComposite extends Composite {
 		escapeAsLabel.setText("Escape files as:");
 
 		final Combo combo = new Combo(templateEngineGroup, SWT.READ_ONLY);
-		combo.setItems(new String[] { "groovy", "ftl", "vm" });
+		combo.setItems(new String[] { "groovy", "ftl", "vm", "txt", "bin" });
 		combo.select(combo.indexOf(selectedExtension));
 		
 		combo.addSelectionListener(new SelectionAdapter() {

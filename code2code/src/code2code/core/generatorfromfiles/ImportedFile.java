@@ -41,13 +41,13 @@ public class ImportedFile {
 		IFile file = newGeneratorConfig.getProject().getFile(destinationPath);
 		FileUtils.createParentFolders(file);
 		
-		if(!extension.equals("")){
+		if(extension.equals("txt") || extension.equals("bin")){
+			file.create(importedFile.getContents(), false, null);
+		}else{
 			String contents = FileUtils.read(((IFile) importedFile).getContents());
 			TemplateEngine templateEngine = TemplateEngineFactory.forExtension(extension);
 			String escaped = templateEngine.escape(contents);
 			file.create(new ByteArrayInputStream(escaped.getBytes()), false, null);
-		}else{
-			file.create(importedFile.getContents(), false, null);
 		}
 		
 	}
