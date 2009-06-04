@@ -40,7 +40,7 @@ public class PreviewDialog extends TrayDialog {
 		FillLayout fillLayout = new FillLayout();
 		dialogArea.setLayout(fillLayout);
 		
-		previewText = new StyledText(dialogArea, SWT.V_SCROLL | SWT.H_SCROLL);
+		previewText = new StyledText(dialogArea, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
 		
 		try {
 			previewText.setText(FileUtils.read(result.calculateResult()));
