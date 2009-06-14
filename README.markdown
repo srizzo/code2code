@@ -7,12 +7,11 @@ code2code is an eclipse plugin to generate code from templates. It allows Rails 
 
 The files:
 
-    generators
-    |-- HelloWorld.generator
-        |-- templates
-            |-- HelloWorldTemplate.txt.ftl
-        |-- templates.ftl
-        |-- params.ftl
+  HelloWorld.generator
+      |-- templates
+          |-- HelloWorldTemplate.txt.ftl
+      |-- templates.ftl
+      |-- params.ftl
 
 
 Contents of HelloWorldTemplate.txt.ftl:
@@ -33,7 +32,7 @@ Contents of templates.ftl:
 
 # Usage
 
-code2code adds a “Generate…” option to your project context menu. When clicked, it will let you choose one of your generators (on the generator folder), ask you the params you’ve specified (the params file), and then generate the result to the places you’ve told it (at the templates file).
+code2code adds a “Generate…” option to your project context menu. When clicked, it will let you choose one of your generators (from the "generators" folder of your project), ask you the params you’ve specified (the params file), and then generate the result to the places you’ve told it (at the templates file).
 
 See it in action  [here](http://elsethenif.wordpress.com/2009/06/12/quickly-cruding-with-code2code-plugin-and-vraptor2/).
 
