@@ -7,7 +7,7 @@ code2code is an eclipse plugin to generate code from templates. It allows Rails 
 
 The files:
 
-  HelloWorld.generator
+    HelloWorld.generator
       |-- templates
           |-- HelloWorldTemplate.txt.ftl
       |-- templates.ftl
