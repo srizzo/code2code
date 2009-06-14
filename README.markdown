@@ -35,12 +35,7 @@ params.ftl:
 
 # Usage
 
-code2code adds a “Generate…” option to your project context menu. When clicked, it will let you choose one of your generators (on the generator folder of your project), ask you the params you’ve specified (on the params file from your generator), and then generate the result to the places you’ve told it (on the templates file of your generator).
-
-# Template engines
-
-code2code will process each file through a template engine, indicated by its extension (.groovy => Groovy, .ftl => Freemarker and .vm => Velocity)
-
+code2code adds a “Generate…” option to your project context menu. When clicked, it will let you choose one of your generators (on the generator folder), ask you the params you’ve specified (the params file), and then generate the result to the places you’ve told it (at the templates file).
 
 # Installation
 
