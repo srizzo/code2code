@@ -1,41 +1,41 @@
 
-# What is it
+# What it is
 
-code2code is an eclipse plugin to generate code from templates. It allows Rails generators like functionality on java (or whatever) projects. Its main goal is easy generator creation by using known template engines, such as Freemarker, Velocity and Groovy Template Engine and very few configuration. See it in action  [here](http://elsethenif.wordpress.com/2009/06/12/quickly-cruding-with-code2code-plugin-and-vraptor2/).
+code2code is an eclipse plugin to generate code from templates. It allows Rails generators like functionality on java (or whatever) projects. Its main goal is easy generator creation by using known template engines, such as Freemarker, Velocity and Groovy Template Engine, and very few configuration. See it in action  [here](http://elsethenif.wordpress.com/2009/06/12/quickly-cruding-with-code2code-plugin-and-vraptor2/).
 
-# A Generator Example
+# A hello world Generator
 
-Generator structure:
+The files:
 
     generators
-    |-- GerenatorName.generator
+    |-- HelloWorld.generator
         |-- templates
-            |-- SomeTeplate.txt.ftl
-            ...
+            |-- HelloWorldTemplate.txt.ftl
         |-- templates.ftl
         |-- params.ftl
 
 
-SomeTemplate.txt.ftl:
+Contents of HelloWorldTemplate.txt.ftl:
 
     Hello ${name}!!!
-    ...
 
 
-templates.ftl:
+Contents of params.ftl:
 
-    templates/SomeTemplate.txt.ftl=src/DestinationFile.txt
-    ...
+    name=World
 
-params.ftl:
 
-    name=some default value
-    ...
+Contents of templates.ftl:
+
+    templates/HelloWorldTemplate.txt.ftl=src/HelloWorld.txt
+
 
 
 # Usage
 
 code2code adds a “Generate…” option to your project context menu. When clicked, it will let you choose one of your generators (on the generator folder), ask you the params you’ve specified (the params file), and then generate the result to the places you’ve told it (at the templates file).
+
+See it in action  [here](http://elsethenif.wordpress.com/2009/06/12/quickly-cruding-with-code2code-plugin-and-vraptor2/).
 
 # Installation
 
