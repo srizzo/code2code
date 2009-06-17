@@ -3,15 +3,15 @@
 <repository name='code2code' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1244578385947'/>
+    <property name='p2.timestamp' value='1245252143302'/>
   </properties>
   <references size='2'>
     <repository url='http://srizzo.github.com/code2code/updatesite/' type='0' options='0'/>
     <repository url='http://srizzo.github.com/code2code/updatesite/' type='1' options='0'/>
   </references>
   <units size='9'>
-    <unit id='code2code.feature.group' version='0.9.1.1' singleton='false'>
-      <update id='code2code.feature.group' range='[0.0.0,0.9.1.1)' severity='0'/>
+    <unit id='code2code.feature.group' version='0.9.2' singleton='false'>
+      <update id='code2code.feature.group' range='[0.0.0,0.9.2)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='code2code Feature'/>
         <property name='org.eclipse.equinox.p2.description' value='http://srizzo.github.com/code2code'/>
@@ -20,11 +20,11 @@
         <property name='org.eclipse.equinox.p2.type.group' value='true'/>
       </properties>
       <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.group' version='0.9.1.1'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.group' version='0.9.2'/>
       </provides>
       <requires size='2'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='code2code' range='[0.9.1.1,0.9.1.1]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.jar' range='[0.9.1.1,0.9.1.1]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='code2code' range='[0.9.2,0.9.2]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.jar' range='[0.9.2,0.9.2]'>
           <filter>
             (org.eclipse.update.install.features=true)
           </filter>
@@ -91,38 +91,40 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='code2code.feature.jar' version='0.9.1.1'>
-      <update id='code2code.feature.jar' range='[0.0.0,0.9.1.1)' severity='0'/>
-      <properties size='4'>
-        <property name='org.eclipse.equinox.p2.name' value='code2code Feature'/>
-        <property name='org.eclipse.equinox.p2.description' value='http://srizzo.github.com/code2code'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='http://srizzo.github.com/code2code'/>
+    <unit id='code2code' version='0.9.2'>
+      <update id='code2code' range='[0.0.0,0.9.2)' severity='0'/>
+      <properties size='2'>
+        <property name='org.eclipse.equinox.p2.name' value='code2code Plug-in'/>
         <property name='org.eclipse.equinox.p2.provider' value='Samuel Rizzo'/>
       </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.jar' version='0.9.1.1'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='code2code' version='0.9.1.1'/>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='code2code' version='0.9.2'/>
+        <provided namespace='osgi.bundle' name='code2code' version='0.9.2'/>
+        <provided namespace='java.package' name='code2code.ui.compare' version='0.0.0'/>
+        <provided namespace='java.package' name='code2code.utils' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
       </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
+      <requires size='8'>
+        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.ide' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.compare' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.jface.text' range='3.4.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.3.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.filesystem' range='1.2.0'/>
+      </requires>
       <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='code2code' version='0.9.1.1'/>
+        <artifact classifier='osgi.bundle' id='code2code' version='0.9.2'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
-          <instruction key='zipped'>
-            true
+          <instruction key='manifest'>
+            Bundle-ManifestVersion: 2&#xA;Bundle-RequiredExecutionEnvironment: J2SE-1.5&#xA;Require-Bundle: org.eclipse.ui,org.eclipse.core.resources;bundle-version=&quot;3.4.0&quot;,org.eclipse.core.runtime;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui.ide;bundle-version=&quot;3.4.0&quot;,org.eclipse.compare;bundle-version=&quot;3.4.0&quot;,org.eclipse.jface.text;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui.console;bundle-version=&quot;3.3.0&quot;,org.eclipse.core.filesystem;bundle-version=&quot;1.2.0&quot;&#xA;Manifest-Version: 1.0&#xA;Bundle-Version: 0.9.2&#xA;Export-Package: code2code.ui.compare,code2code.utils&#xA;Bundle-SymbolicName: code2code;singleton:=true&#xA;Bundle-Name: code2code Plug-in&#xA;Bundle-ClassPath: lib/freemarker.jar,.,lib/velocity-1.6-dep.jar,lib/groovy-all-1.5.7.jar&#xA;Bundle-Vendor: Samuel Rizzo&#xA;
           </instruction>
         </instructions>
       </touchpointData>
-      <licenses size='1'>
-        <license>
-          Copyright (c) 2009 Samuel Rizzo&#xA;Permission is hereby granted, free of charge, to any person&#xA;obtaining a copy of this software and associated documentation&#xA;files (the &quot;Software&quot;), to deal in the Software without&#xA;restriction, including without limitation the rights to use,&#xA;copy, modify, merge, publish, distribute, sublicense, and/or&#xA;sell&#xA;copies of the Software, and to permit persons to whom the&#xA;Software is furnished to do so, subject to the following&#xA;conditions:&#xA;The above copyright notice and this permission notice shall be&#xA;included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,&#xA;EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES&#xA;OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND&#xA;NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT&#xA;HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#xA;WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING&#xA;FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR&#xA;OTHER DEALINGS IN THE SOFTWARE.
-        </license>
-      </licenses>
     </unit>
     <unit id='tooling.source.default' version='1.0.0' singleton='false'>
       <hostRequirements size='1'>
@@ -150,6 +152,39 @@
         </instructions>
       </touchpointData>
     </unit>
+    <unit id='code2code.feature.jar' version='0.9.2'>
+      <update id='code2code.feature.jar' range='[0.0.0,0.9.2)' severity='0'/>
+      <properties size='4'>
+        <property name='org.eclipse.equinox.p2.name' value='code2code Feature'/>
+        <property name='org.eclipse.equinox.p2.description' value='http://srizzo.github.com/code2code'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://srizzo.github.com/code2code'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Samuel Rizzo'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.jar' version='0.9.2'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='code2code' version='0.9.2'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='code2code' version='0.9.2'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license>
+          Copyright (c) 2009 Samuel Rizzo&#xA;Permission is hereby granted, free of charge, to any person&#xA;obtaining a copy of this software and associated documentation&#xA;files (the &quot;Software&quot;), to deal in the Software without&#xA;restriction, including without limitation the rights to use,&#xA;copy, modify, merge, publish, distribute, sublicense, and/or&#xA;sell&#xA;copies of the Software, and to permit persons to whom the&#xA;Software is furnished to do so, subject to the following&#xA;conditions:&#xA;The above copyright notice and this permission notice shall be&#xA;included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,&#xA;EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES&#xA;OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND&#xA;NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT&#xA;HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#xA;WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING&#xA;FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR&#xA;OTHER DEALINGS IN THE SOFTWARE.
+        </license>
+      </licenses>
+    </unit>
     <unit id='code2code' version='0.0.0'>
       <properties size='2'>
         <property name='org.eclipse.equinox.p2.name' value='code2code'/>
@@ -159,44 +194,9 @@
         <provided namespace='org.eclipse.equinox.p2.iu' name='code2code' version='0.0.0'/>
       </provides>
       <requires size='1'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.group' range='[0.9.1.1,0.9.1.1]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='code2code.feature.group' range='[0.9.2,0.9.2]'/>
       </requires>
       <touchpoint id='null' version='0.0.0'/>
-    </unit>
-    <unit id='code2code' version='0.9.1.1'>
-      <update id='code2code' range='[0.0.0,0.9.1.1)' severity='0'/>
-      <properties size='2'>
-        <property name='org.eclipse.equinox.p2.name' value='code2code Plug-in'/>
-        <property name='org.eclipse.equinox.p2.provider' value='Samuel Rizzo'/>
-      </properties>
-      <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='code2code' version='0.9.1.1'/>
-        <provided namespace='osgi.bundle' name='code2code' version='0.9.1.1'/>
-        <provided namespace='java.package' name='code2code.ui.compare' version='0.0.0'/>
-        <provided namespace='java.package' name='code2code.utils' version='0.0.0'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='8'>
-        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui.ide' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.compare' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.jface.text' range='3.4.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.3.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.filesystem' range='1.2.0'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='code2code' version='0.9.1.1'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-ManifestVersion: 2&#xA;Bundle-RequiredExecutionEnvironment: J2SE-1.5&#xA;Require-Bundle: org.eclipse.ui,org.eclipse.core.resources;bundle-version=&quot;3.4.0&quot;,org.eclipse.core.runtime;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui.ide;bundle-version=&quot;3.4.0&quot;,org.eclipse.compare;bundle-version=&quot;3.4.0&quot;,org.eclipse.jface.text;bundle-version=&quot;3.4.0&quot;,org.eclipse.ui.console;bundle-version=&quot;3.3.0&quot;,org.eclipse.core.filesystem;bundle-version=&quot;1.2.0&quot;&#xA;Manifest-Version: 1.0&#xA;Bundle-Version: 0.9.1.1&#xA;Export-Package: code2code.ui.compare,code2code.utils&#xA;Bundle-SymbolicName: code2code;singleton:=true&#xA;Bundle-Name: code2code Plug-in&#xA;Bundle-ClassPath: lib/freemarker.jar,.,lib/velocity-1.6-dep.jar,lib/groovy-all-1.5.7.jar&#xA;Bundle-Vendor: Samuel Rizzo&#xA;
-          </instruction>
-        </instructions>
-      </touchpointData>
     </unit>
     <unit id='a.jre' version='1.6.0' singleton='false'>
       <provides size='117'>

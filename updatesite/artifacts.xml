@@ -3,7 +3,7 @@
 <repository name='code2code' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1244578385946'/>
+    <property name='p2.timestamp' value='1245252143292'/>
   </properties>
   <mappings size='3'>
     <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
@@ -11,17 +11,17 @@
     <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
   </mappings>
   <artifacts size='2'>
-    <artifact classifier='osgi.bundle' id='code2code' version='0.9.1.1'>
+    <artifact classifier='osgi.bundle' id='code2code' version='0.9.2'>
       <properties size='3'>
-        <property name='artifact.size' value='4238249'/>
-        <property name='download.size' value='4238249'/>
+        <property name='artifact.size' value='4238421'/>
+        <property name='download.size' value='4238421'/>
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='code2code' version='0.9.1.1'>
+    <artifact classifier='org.eclipse.update.feature' id='code2code' version='0.9.2'>
       <properties size='2'>
-        <property name='artifact.size' value='1297'/>
-        <property name='download.size' value='1297'/>
+        <property name='artifact.size' value='1295'/>
+        <property name='download.size' value='1295'/>
       </properties>
     </artifact>
   </artifacts>

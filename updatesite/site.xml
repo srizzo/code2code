@@ -3,7 +3,7 @@
    <description url="http://srizzo.github.com/code2code/updatesite/">
       code2code update site
    </description>
-   <feature url="features/code2code_0.9.1.1.jar" id="code2code" version="0.9.1.1">
+   <feature url="features/code2code_0.9.2.jar" id="code2code" version="0.9.2">
       <category name="code2code"/>
    </feature>
    <category-def name="code2code" label="code2code"/>
