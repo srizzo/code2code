@@ -38,7 +38,7 @@ See it in action  [here](http://elsethenif.wordpress.com/2009/06/12/quickly-crud
 
 # Installation
 
-Current version is 0.9.1.1 beta, tested against Eclipse Ganymede 3.4.2.
+Current version is 0.9.2 beta, tested against Eclipse Ganymede 3.4.2.
 
 You can install it from the [Update Site](http://srizzo.github.com/code2code/updatesite)
 

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: code2code plugin Tests
 Bundle-SymbolicName: code2code.tests
-Bundle-Version: 0.9.1.1
+Bundle-Version: 0.9.2
 Bundle-Vendor: Samuel Rizzo
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.junit4;bundle-version="4.3.1",
