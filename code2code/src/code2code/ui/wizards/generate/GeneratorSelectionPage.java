@@ -13,6 +13,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 
 import code2code.core.generator.Generator;
 import code2code.core.generator.GeneratorFactory;
@@ -57,6 +58,11 @@ public class GeneratorSelectionPage  extends WizardPage {
 			throw new RuntimeException(e1);
 		}
 
+		if(generators.isEmpty()){
+			Label label = new Label(container, SWT.NONE);
+			label.setText("No generators found.");
+		}
+		
 		for (Generator generator : generators) {
 
 			Button button = new Button(container, SWT.RADIO);

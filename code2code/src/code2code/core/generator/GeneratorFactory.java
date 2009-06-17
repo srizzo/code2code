@@ -1,6 +1,7 @@
 package code2code.core.generator;
 
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -27,7 +28,12 @@ public class GeneratorFactory {
 			}
 		});
 		
-		IFolder defaultGeneratorsFolder = project.getFolder(new Path("generators"));
+		IFolder defaultGeneratorsFolder = project.getFolder("generators");
+		
+		if(!defaultGeneratorsFolder.exists()){
+			return new HashSet<Generator>();
+		}
+		
 		
 		IResourceVisitor visitor = new IResourceVisitor(){
 			public boolean visit(IResource resource) throws CoreException {
